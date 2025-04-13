@@ -7,7 +7,6 @@
     <meta property="og:description" content="Welcome to the official website of the CaliRP U.S. Navy, dedicated to professionalism, discipline, and service.">
     <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Emblem_of_the_United_States_Navy.svg/600px-Emblem_of_the_United_States_Navy.svg.png">
     <meta property="og:url" content="https://dasham0123.github.io/calirp-us-navy-website/homepage.html">
-    <meta property="og:url" content="https://calirp-us-navy.org/homepage.html">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="CaliRP U.S. Navy">
@@ -16,11 +15,35 @@
     <link rel="icon" type="image/png" href="navyicon.png">
     <title>CaliRP U.S. Navy - Home</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Circle Scroll Button */
+        .scroll-button {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #333;
+            color: white;
+            border: none;
+            font-size: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: background-color 0.3s;
+            z-index: 1000;
+        }
+
+        .scroll-button:hover {
+            background-color: darkblue;
+        }
+    </style>
 </head>
 <body>
+
     <!-- Slideshow Container -->
     <div class="slideshow-container">
-        <!-- Slide 1 -->
         <div class="mySlides fade">
             <img src="USNrecruitment.png" alt="Slide 1">
             <div class="text-overlay">
@@ -29,7 +52,6 @@
             </div>
         </div>
 
-        <!-- Slide 2 -->
         <div class="mySlides fade">
             <img src="navyicon.png" alt="Slide 2">
             <div class="text-overlay">
@@ -38,7 +60,6 @@
             </div>
         </div>
 
-        <!-- Slide 3 -->
         <div class="mySlides fade">
             <img src="heading2.png" alt="Slide 3">
             <div class="text-overlay">
@@ -48,8 +69,29 @@
         </div>
     </div>
 
-    <!-- JavaScript for Slideshow -->
+    <!-- Scroll Down Button -->
+    <button class="scroll-button" onclick="scrollDown()">↓</button>
+
+    <!-- JavaScript for Slideshow and Scroll -->
     <script src="scripts.js"></script>
+    <script>
+    const scrollBtn = document.querySelector('.scroll-button');
+
+    // Scroll behavior when clicked
+    function scrollDown() {
+        document.getElementById("about").scrollIntoView({ behavior: "smooth" });
+        scrollBtn.style.display = 'none';
+    }
+
+    // Show/hide on scroll
+    window.addEventListener('scroll', () => {
+        if (window.scrollY < 100) {
+            scrollBtn.style.display = 'block';
+        } else {
+            scrollBtn.style.display = 'none';
+        }
+    });
+</script>
 
     <!-- Nav Bar Section -->
     <div class="nav">
@@ -69,11 +111,12 @@
         <p>The mission of the Navy is to maintain, train and equip combat-ready Naval forces capable of winning wars, deterring aggression and maintaining freedom of the seas.</p>
         
         <h2 id="join">Join Us</h2>
-        <p>1.   Join: <a href="https://discord.gg/VRb42AkTtc" target="_blank">CaliRP | The Pentagon.</a></p>
-        <p>2.   Head over to <a href="https://discord.com/channels/1294671201150566490/1298797043430719599/1298822906700107798" target="_blank">The Pentagon > # ticket-selecton.</a></p>
-        <p>3.   Open a "General Support" ticket and ask to be recruited into the U.S. Navy.</p>
-        <p>4.   A DOD Department Coord and/or Navy HC will answer with a few questions for recruitment.</p>
+        <p>1.   Join: <a href="https://discord.gg/4SqJBVs2ce" target="_blank">CaliRP | California Volunteer Police Department.</a></p>
+        <p>2.   Head over to <a href="https://discord.com/channels/1318682055730790451/1318694515535773706/1360015350753656923" target="_blank"># 🚩・apply-to-department.</a></p>
+        <p>3.   Click on the dropdown under "DOD Applications" scroll down and click on "United States Navy"</p>
+        <p>4.   A thread will open and you will have to copy and paste the questions that the bot provided. After you answer the quesitons, a Navy Recruiter will reach out to you with the application response.</p>
     </div>
+
     <div class="footer">
         <footer>Disclaimer: We are in no way, shape, or form associated with the real U.S. Navy.</footer>
     </div>
